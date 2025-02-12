@@ -119,7 +119,7 @@
             // 
             this.lblCajero2.AutoSize = true;
             this.lblCajero2.BackColor = System.Drawing.Color.Bisque;
-            this.lblCajero2.Location = new System.Drawing.Point(179, 34);
+            this.lblCajero2.Location = new System.Drawing.Point(161, 34);
             this.lblCajero2.Name = "lblCajero2";
             this.lblCajero2.Size = new System.Drawing.Size(44, 16);
             this.lblCajero2.TabIndex = 7;
@@ -129,7 +129,7 @@
             // 
             this.lblCajero3.AutoSize = true;
             this.lblCajero3.BackColor = System.Drawing.Color.Bisque;
-            this.lblCajero3.Location = new System.Drawing.Point(309, 34);
+            this.lblCajero3.Location = new System.Drawing.Point(293, 34);
             this.lblCajero3.Name = "lblCajero3";
             this.lblCajero3.Size = new System.Drawing.Size(44, 16);
             this.lblCajero3.TabIndex = 8;

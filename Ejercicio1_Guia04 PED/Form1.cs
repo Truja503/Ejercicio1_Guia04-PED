@@ -13,12 +13,21 @@ namespace Ejercicio1_Guia04_PED
     public partial class Form1 : Form
     {
         Cajero cajero1;
+        Cajero cajero2;
+        Cajero cajero3;
+        int turno=1;
         public Form1()
         {
             InitializeComponent();
 
             cajero1 = new Cajero("Ani", "Alfaro", listBox1, lstClientesAtendidos);
             lblCajero1.Text = cajero1.Nom + " " +  cajero1.Apell;
+
+            cajero2 = new Cajero("Maria", "Perez", listBox2, lstClientesAtendidos);
+            lblCajero2.Text = cajero2.Nom + " " + cajero2.Apell;
+
+            cajero3 = new Cajero("Isaias", "Hernandez", listBox3, lstClientesAtendidos);
+            lblCajero3.Text = cajero3.Nom + " " + cajero3.Apell;
         }
 
         private void btnAgregarACola_Click(object sender, EventArgs e)
@@ -29,8 +38,28 @@ namespace Ejercicio1_Guia04_PED
             if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(apellido))
             {
                 Cliente cliente = new Cliente(nombre, apellido);
-                cajero1.EncolarCliente(cliente);
-                cajero1.ActualizarClientesenEspera();
+
+                switch (turno)
+                {
+                    case 1:
+                        cajero1.EncolarCliente(cliente);
+                        cajero1.ActualizarClientesenEspera();
+                        turno = 2;
+                        break;
+
+                        case 2:
+                        cajero2.EncolarCliente(cliente);
+                        cajero2.ActualizarClientesenEspera();
+                        turno = 3;
+                        break;
+
+                        case 3:
+                        cajero3.EncolarCliente(cliente);
+                        cajero3.ActualizarClientesenEspera();
+                        turno = 1;
+                        break;
+            }
+            
             }
             else
             {
