@@ -62,7 +62,7 @@ namespace Ejercicio1_Guia04_PED
             else
             {
                 ClienteFin.clientesig = nodo;
-                ClienteInic = nodo;
+                ClienteFin = nodo;
 
             }
             totalClientes++;

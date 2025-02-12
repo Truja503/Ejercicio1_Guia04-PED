@@ -18,8 +18,6 @@ namespace Ejercicio1_Guia04_PED
         {
             this.nom = nom;
             this.apell = apell;
-    
-
         }
 
         public string NombreCompleto()
