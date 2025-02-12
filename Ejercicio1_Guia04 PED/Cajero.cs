@@ -64,7 +64,7 @@ namespace Ejercicio1_Guia04_PED
         }
         public void FinalizarCliente(object sender, EventArgs e)
         {
-           
+            
            lstColaSalida.Items.Add(cliente_actual.nom + " " + cliente_actual.apell); // Mover a la lista de clientes atendidos
             colaAtencion.RemoverCli();//Eliminamos de la cola al cliente atendido
             lstVistaCola.Items.RemoveAt(0); // Eliminar el cliente de la cola de espera
@@ -87,7 +87,7 @@ namespace Ejercicio1_Guia04_PED
             tiempoatencion = numeroaleatorio.Next(1000, 5000);//almacenamos un numero randon de 10,000 a 50,000 
             relojatencion.Interval = tiempoatencion;//Intervalo aleatorio 
 
-
+            relojatencion.Tick -= new System.EventHandler(FinalizarCliente);
             relojatencion.Tick += new System.EventHandler(FinalizarCliente);
             relojatencion.Start();
 
