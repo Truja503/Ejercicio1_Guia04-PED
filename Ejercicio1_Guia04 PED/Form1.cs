@@ -36,7 +36,24 @@ namespace Ejercicio1_Guia04_PED
             {
                 MessageBox.Show("Por favor, ingrese nombre y apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+        }
 
+        private void btnAbrirSucursal_Click(object sender, EventArgs e)
+        {
+            label3.Text = "Estado: Abierta";
+            label3.BackColor = Color.Green;
+            btnAgregarACola.Enabled = true;
+            txtApellido.Enabled = true;
+            txtNombre.Enabled = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnAgregarACola.Enabled = false;
+            txtApellido.Enabled = false;
+            txtNombre.Enabled = false;
         }
     }
 }
