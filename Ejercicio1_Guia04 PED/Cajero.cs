@@ -32,6 +32,7 @@ namespace Ejercicio1_Guia04_PED
             clientesEnCola = 0;
             estado = new EstadoCajero("Disponible");
             relojatencion = new Timer();
+            colaAtencion = new ColaCliente();
             
 
         }
@@ -48,7 +49,7 @@ namespace Ejercicio1_Guia04_PED
 
         public void EncolarCliente(Cliente nueCliente)
         {
-            colaAtencion = new ColaCliente();
+            
 
             if (nueCliente != null)
             {
@@ -63,8 +64,9 @@ namespace Ejercicio1_Guia04_PED
         }
         public void FinalizarCliente(object sender, EventArgs e)
         {
+           
+           lstColaSalida.Items.Add(cliente_actual.nom + " " + cliente_actual.apell); // Mover a la lista de clientes atendidos
             colaAtencion.RemoverCli();//Eliminamos de la cola al cliente atendido
-            lstColaSalida.Items.Add(lstVistaCola.Items[0]); // Mover a la lista de clientes atendidos
             lstVistaCola.Items.RemoveAt(0); // Eliminar el cliente de la cola de espera
           
             ActualizarClientesenEspera();
@@ -75,10 +77,12 @@ namespace Ejercicio1_Guia04_PED
             int semilla = Environment.TickCount;//Obtenemos la semilla
             return semilla;
         }
+      
         public void AtenderCliente()
         {
 
             estado.estado = "Ocupado";
+            cliente_actual = colaAtencion.ClienteInic;
             numeroaleatorio = new Random(GenerarSemilla());//creamos el objeto random
             tiempoatencion = numeroaleatorio.Next(1000, 5000);//almacenamos un numero randon de 10,000 a 50,000 
             relojatencion.Interval = tiempoatencion;//Intervalo aleatorio 
