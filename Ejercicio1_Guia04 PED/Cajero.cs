@@ -11,7 +11,7 @@ namespace Ejercicio1_Guia04_PED
     internal class Cajero
     {
         //Isel Metzi Carrillo Mejía, Carnet: CM240437
-        //
+        //Rodrigo Guillermo Trujillo Diaz, Carnet: TD240434
 
 
         //creamos los atributos para el cajero
