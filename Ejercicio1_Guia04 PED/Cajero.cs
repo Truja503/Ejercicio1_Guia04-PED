@@ -10,6 +10,10 @@ namespace Ejercicio1_Guia04_PED
 {
     internal class Cajero
     {
+        //Isel Metzi Carrillo Mejía, Carnet: CM240437
+        //
+
+
         //creamos los atributos para el cajero
         private String nom; //nombre del cajero
         private String apell;//apellido del cajero
@@ -64,8 +68,7 @@ namespace Ejercicio1_Guia04_PED
         }
         public void FinalizarCliente(object sender, EventArgs e)
         {
-            
-           lstColaSalida.Items.Add(cliente_actual.nom + " " + cliente_actual.apell); // Mover a la lista de clientes atendidos
+            ActualizarClientesSalida();
             colaAtencion.RemoverCli();//Eliminamos de la cola al cliente atendido
             lstVistaCola.Items.RemoveAt(0); // Eliminar el cliente de la cola de espera
 
@@ -101,7 +104,7 @@ namespace Ejercicio1_Guia04_PED
         }
         public void ActualizarClientesSalida()
         {
-            
+            lstColaSalida.Items.Add(cliente_actual.nom + " " + cliente_actual.apell); // Mover a la lista de clientes atendidos
         }
         public int totClientesEnCola()
         {

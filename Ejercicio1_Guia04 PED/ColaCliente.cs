@@ -47,22 +47,17 @@ namespace Ejercicio1_Guia04_PED
             TotalClientes = 0;
         }
 
-        public int TotalCLientes()
-        {
-            return TotalClientes;
-        }
-
        public void AgregarCli(Cliente nodo)
         {
             if( ClienteInic == null )
             {
-                clienteInic = clienteFin = nodo;
+                clienteInic = clienteFin = nodo; //si no habia cliente inicio, el nodo enviado es inicio y fin
                 
             }
             else 
             {   
-                clienteFin.clientesig = nodo;
-                clienteFin = nodo;
+                clienteFin.clientesig = nodo; //conecta el nodo enviado con el cliente que antes era fin
+                clienteFin = nodo; //establece el cliente enviado como fin
 
             }
             totalClientes++;
@@ -74,10 +69,10 @@ namespace Ejercicio1_Guia04_PED
             if(ClienteInic != null)
             {
                 aux = clienteInic;
-                clienteInic = clienteInic.clientesig;
+                clienteInic = clienteInic.clientesig; //convierte al nodo despues del que se va a eliminar a inicio
                 totalClientes--;
             }
-           return aux;
+           return aux; //devuelve el cliente que se eliminó
         }
 
         public void AnotarClientesEn(ListBox VistaClientes)
