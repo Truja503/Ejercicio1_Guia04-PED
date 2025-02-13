@@ -45,6 +45,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblCajero4 = new System.Windows.Forms.Label();
+            this.listBox4 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -140,7 +142,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(717, 79);
+            this.label6.Location = new System.Drawing.Point(875, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 16);
             this.label6.TabIndex = 9;
@@ -180,7 +182,7 @@
             // 
             this.lstClientesAtendidos.FormattingEnabled = true;
             this.lstClientesAtendidos.ItemHeight = 16;
-            this.lstClientesAtendidos.Location = new System.Drawing.Point(720, 98);
+            this.lstClientesAtendidos.Location = new System.Drawing.Point(878, 108);
             this.lstClientesAtendidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstClientesAtendidos.Name = "lstClientesAtendidos";
             this.lstClientesAtendidos.Size = new System.Drawing.Size(153, 292);
@@ -204,6 +206,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblCajero4);
+            this.groupBox2.Controls.Add(this.listBox4);
             this.groupBox2.Controls.Add(this.lblCajero3);
             this.groupBox2.Controls.Add(this.lblCajero2);
             this.groupBox2.Controls.Add(this.lblCajero1);
@@ -214,7 +218,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(421, 302);
+            this.groupBox2.Size = new System.Drawing.Size(551, 302);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CAJEROS (Atencion a clientes)";
@@ -231,11 +235,31 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Estado: Cerrada";
             // 
+            // lblCajero4
+            // 
+            this.lblCajero4.AutoSize = true;
+            this.lblCajero4.BackColor = System.Drawing.Color.Bisque;
+            this.lblCajero4.Location = new System.Drawing.Point(425, 34);
+            this.lblCajero4.Name = "lblCajero4";
+            this.lblCajero4.Size = new System.Drawing.Size(44, 16);
+            this.lblCajero4.TabIndex = 13;
+            this.lblCajero4.Text = "label5";
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 16;
+            this.listBox4.Location = new System.Drawing.Point(412, 54);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(129, 228);
+            this.listBox4.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 450);
+            this.ClientSize = new System.Drawing.Size(1095, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -274,6 +298,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCajero4;
+        private System.Windows.Forms.ListBox listBox4;
     }
 }
 

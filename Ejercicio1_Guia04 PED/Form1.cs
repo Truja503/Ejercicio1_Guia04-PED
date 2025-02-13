@@ -15,7 +15,8 @@ namespace Ejercicio1_Guia04_PED
         Cajero cajero1;
         Cajero cajero2;
         Cajero cajero3;
-       
+        Cajero cajero4;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,9 @@ namespace Ejercicio1_Guia04_PED
 
             cajero3 = new Cajero("Isaias", "Hernandez", listBox3, lstClientesAtendidos);
             lblCajero3.Text = cajero3.Nom + " " + cajero3.Apell;
+
+            cajero4 = new Cajero("Karla", "Martinez", listBox4, lstClientesAtendidos);
+            lblCajero4.Text = cajero4.Nom + " " + cajero4.Apell;
         }
 
         private void btnAgregarACola_Click(object sender, EventArgs e)
@@ -44,23 +48,29 @@ namespace Ejercicio1_Guia04_PED
                 int cantidadCajero1 = cajero1.totClientesEnCola();
                 int cantidadCajero2 = cajero2.totClientesEnCola();
                 int cantidadCajero3 = cajero3.totClientesEnCola();
+                int cantidadCajero4 = cajero4.totClientesEnCola();
 
                 //Busca la fila mas vacia
-                if (cantidadCajero1 <= cantidadCajero2 && cantidadCajero1 <= cantidadCajero3)
+                if (cantidadCajero1 <= cantidadCajero2 && cantidadCajero1 <= cantidadCajero3 && cantidadCajero1 <= cantidadCajero4)
                 {
                     cajero1.EncolarCliente(cliente); //agrega el cliente a la cola de ese cajero
                     cajero1.ActualizarClientesenEspera();
 
                 }
-                else if (cantidadCajero2 <= cantidadCajero1 && cantidadCajero2 <= cantidadCajero3)
+                else if (cantidadCajero2 <= cantidadCajero1 && cantidadCajero2 <= cantidadCajero3 && cantidadCajero2 <= cantidadCajero4)
                 {
                     cajero2.EncolarCliente(cliente);
                     cajero2.ActualizarClientesenEspera();
                 }
-                else if (cantidadCajero3 <= cantidadCajero2 && cantidadCajero3 <= cantidadCajero1)
+                else if (cantidadCajero3 <= cantidadCajero2 && cantidadCajero3 <= cantidadCajero1 && cantidadCajero3 <= cantidadCajero4)
                 {
                     cajero3.EncolarCliente(cliente);
                     cajero3.ActualizarClientesenEspera();
+                }
+                else 
+                {
+                    cajero4.EncolarCliente(cliente);
+                    cajero4.ActualizarClientesenEspera();
                 }
             }
             else
