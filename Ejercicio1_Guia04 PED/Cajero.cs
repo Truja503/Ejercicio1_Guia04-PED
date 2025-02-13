@@ -84,7 +84,7 @@ namespace Ejercicio1_Guia04_PED
             estado.estado = "Ocupado";
             cliente_actual = colaAtencion.ClienteInic;
             numeroaleatorio = new Random(GenerarSemilla());//creamos el objeto random
-            tiempoatencion = numeroaleatorio.Next(1000, 5000);//almacenamos un numero randon de 10,000 a 50,000 
+            tiempoatencion = numeroaleatorio.Next(10000, 50000);//almacenamos un numero randon de 10,000 a 50,000 
             relojatencion.Interval = tiempoatencion;//Intervalo aleatorio 
 
             relojatencion.Tick -= new System.EventHandler(FinalizarCliente);

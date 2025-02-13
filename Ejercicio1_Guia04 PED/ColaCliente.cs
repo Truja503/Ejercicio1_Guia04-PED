@@ -54,15 +54,15 @@ namespace Ejercicio1_Guia04_PED
 
        public void AgregarCli(Cliente nodo)
         {
-            if( clienteInic == null )
+            if( ClienteInic == null )
             {
-                ClienteInic = nodo;
-                ClienteFin = nodo;
+                clienteInic = clienteFin = nodo;
+                
             }
-            else
-            {
-                ClienteFin.clientesig = nodo;
-                ClienteFin = nodo;
+            else 
+            {   
+                clienteFin.clientesig = nodo;
+                clienteFin = nodo;
 
             }
             totalClientes++;
