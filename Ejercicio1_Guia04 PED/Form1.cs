@@ -35,31 +35,31 @@ namespace Ejercicio1_Guia04_PED
             string nombre = txtNombre.Text.Trim();
             string apellido = txtApellido.Text.Trim();
 
+
             if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(apellido))
             {
                 Cliente cliente = new Cliente(nombre, apellido);
 
-                switch (turno)
+                int cantidadCajero1 = cajero1.totClientesEnCola();
+                int cantidadCajero2 = cajero2.totClientesEnCola();
+                int cantidadCajero3 = cajero3.totClientesEnCola();
+
+                if (cantidadCajero1 <= cantidadCajero2 && cantidadCajero1 <= cantidadCajero3)
                 {
-                    case 1:
-                        cajero1.EncolarCliente(cliente);
-                        cajero1.ActualizarClientesenEspera();
-                        turno = 2;
-                        break;
+                    cajero1.EncolarCliente(cliente);
+                    cajero1.ActualizarClientesenEspera();
 
-                        case 2:
-                        cajero2.EncolarCliente(cliente);
-                        cajero2.ActualizarClientesenEspera();
-                        turno = 3;
-                        break;
-
-                        case 3:
-                        cajero3.EncolarCliente(cliente);
-                        cajero3.ActualizarClientesenEspera();
-                        turno = 1;
-                        break;
-            }
-            
+                }
+                else if (cantidadCajero2 <= cantidadCajero1 && cantidadCajero2 <= cantidadCajero3)
+                {
+                    cajero2.EncolarCliente(cliente);
+                    cajero2.ActualizarClientesenEspera();
+                }
+                else if (cantidadCajero3 <= cantidadCajero2 && cantidadCajero3 <= cantidadCajero1)
+                {
+                    cajero3.EncolarCliente(cliente);
+                    cajero3.ActualizarClientesenEspera();
+                }
             }
             else
             {

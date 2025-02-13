@@ -68,7 +68,8 @@ namespace Ejercicio1_Guia04_PED
            lstColaSalida.Items.Add(cliente_actual.nom + " " + cliente_actual.apell); // Mover a la lista de clientes atendidos
             colaAtencion.RemoverCli();//Eliminamos de la cola al cliente atendido
             lstVistaCola.Items.RemoveAt(0); // Eliminar el cliente de la cola de espera
-          
+
+            clientesEnCola -= 1;
             ActualizarClientesenEspera();
             relojatencion.Stop();
         }
